@@ -72,21 +72,18 @@ def start_gui():
     hotkey_frame = tk.Frame(root)
     hotkey_frame.pack(pady=10)
 
-    # Start hotkey input
     start_key_label = tk.Label(hotkey_frame, text="Start Hotkey:", font=("Arial", 12))
     start_key_label.grid(row=0, column=0, padx=5)
     start_key_entry = tk.Entry(hotkey_frame, font=("Arial", 12), width=5)
     start_key_entry.grid(row=0, column=1, padx=5)
     start_key_entry.insert(0, "s")  # Default start hotkey
 
-    # Stop hotkey input
     stop_key_label = tk.Label(hotkey_frame, text="Stop Hotkey:", font=("Arial", 12))
     stop_key_label.grid(row=1, column=0, padx=5)
     stop_key_entry = tk.Entry(hotkey_frame, font=("Arial", 12), width=5)
     stop_key_entry.grid(row=1, column=1, padx=5)
     stop_key_entry.insert(0, "e")  # Default stop hotkey
 
-    # Update hotkeys button
     update_button = tk.Button(
         hotkey_frame, text="Update Hotkeys", command=update_hotkeys, font=("Arial", 12)
     )
@@ -102,13 +99,10 @@ def start_gui():
 
     root.mainloop()
 
-# Start the autoclicker thread
 click_thread = threading.Thread(target=clicker, daemon=True)
 click_thread.start()
 
-# Start the keyboard listener
 listener = Listener(on_press=on_press)
 listener.start()
 
-# Start the GUI
 start_gui()
