@@ -3,6 +3,7 @@
 #todo
 #add custom time
 #add option where users can choose the button to autoclick
+
 import time
 import threading
 from pynput.mouse import Button, Controller
@@ -13,8 +14,8 @@ from tkinter import messagebox
 clicking = False
 mouse = Controller()
 
-START_HOTKEY = KeyCode(char='s')  
-STOP_HOTKEY = KeyCode(char='e')  
+START_HOTKEY = KeyCode(char='+')  
+STOP_HOTKEY = KeyCode(char='-')  
 
 
 def clicker():
@@ -66,12 +67,12 @@ def start_gui():
     global root, status_label, start_key_entry, stop_key_entry
 
     root = tk.Tk()
-    root.title("Autoclicker")
+    root.title("Simple Autoclicker")
     root.geometry("400x300")
     root.protocol("WM_DELETE_WINDOW", on_close)
 
    
-    title_label = tk.Label(root, text="Autoclicker", font=("Arial", 16))
+    title_label = tk.Label(root, text="Saiba'sAutoclicker", font=("Arial", 16))
     title_label.pack(pady=10)
 
     hotkey_frame = tk.Frame(root)
@@ -81,13 +82,13 @@ def start_gui():
     start_key_label.grid(row=0, column=0, padx=5)
     start_key_entry = tk.Entry(hotkey_frame, font=("Arial", 12), width=5)
     start_key_entry.grid(row=0, column=1, padx=5)
-    start_key_entry.insert(0, "s")  
+    start_key_entry.insert(0, "+")  
 
     stop_key_label = tk.Label(hotkey_frame, text="Stop Hotkey:", font=("Arial", 12))
     stop_key_label.grid(row=1, column=0, padx=5)
     stop_key_entry = tk.Entry(hotkey_frame, font=("Arial", 12), width=5)
     stop_key_entry.grid(row=1, column=1, padx=5)
-    stop_key_entry.insert(0, "e")  
+    stop_key_entry.insert(0, "-")  
 
     update_button = tk.Button(
         hotkey_frame, text="Update Hotkeys", command=update_hotkeys, font=("Arial", 12)
