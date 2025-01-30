@@ -1,3 +1,8 @@
+#Autoclicker
+
+#todo
+#add custom time
+#add option where users can choose the button to autoclick
 import time
 import threading
 from pynput.mouse import Button, Controller
@@ -76,13 +81,13 @@ def start_gui():
     start_key_label.grid(row=0, column=0, padx=5)
     start_key_entry = tk.Entry(hotkey_frame, font=("Arial", 12), width=5)
     start_key_entry.grid(row=0, column=1, padx=5)
-    start_key_entry.insert(0, "s")  # Default start hotkey
+    start_key_entry.insert(0, "s")  
 
     stop_key_label = tk.Label(hotkey_frame, text="Stop Hotkey:", font=("Arial", 12))
     stop_key_label.grid(row=1, column=0, padx=5)
     stop_key_entry = tk.Entry(hotkey_frame, font=("Arial", 12), width=5)
     stop_key_entry.grid(row=1, column=1, padx=5)
-    stop_key_entry.insert(0, "e")  # Default stop hotkey
+    stop_key_entry.insert(0, "e")  
 
     update_button = tk.Button(
         hotkey_frame, text="Update Hotkeys", command=update_hotkeys, font=("Arial", 12)
