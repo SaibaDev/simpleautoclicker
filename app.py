@@ -17,6 +17,10 @@ mouse = Controller()
 START_HOTKEY = KeyCode(char='+')  
 STOP_HOTKEY = KeyCode(char='-')  
 
+#def timeSet():
+#def buttonSelect():
+
+#def timer():
 
 def clicker():
     while True:
@@ -72,7 +76,7 @@ def start_gui():
     root.protocol("WM_DELETE_WINDOW", on_close)
 
    
-    title_label = tk.Label(root, text="Saiba'sAutoclicker", font=("Arial", 16))
+    title_label = tk.Label(root, text="Saiba's SimpleAutoClicker", font=("Arial", 16))
     title_label.pack(pady=10)
 
     hotkey_frame = tk.Frame(root)
