@@ -18,6 +18,8 @@ START_HOTKEY = KeyCode(char='+')
 STOP_HOTKEY = KeyCode(char='-')  
 
 #def timeSet():
+
+
 #def buttonSelect():
 
 #def timer():
@@ -78,6 +80,19 @@ def start_gui():
    
     title_label = tk.Label(root, text="Saiba's SimpleAutoClicker", font=("Arial", 16))
     title_label.pack(pady=10)
+
+    #time set
+    entry = tk.Entry(root,width=20,)
+    entry.pack()
+
+    entry = tk.Entry(root,width=20)
+    entry.pack()
+
+    entry = tk.Entry(root,width=20)
+    entry.pack()
+
+    entry = tk.Entry(root,width=20)
+    entry.pack()
 
     hotkey_frame = tk.Frame(root)
     hotkey_frame.pack(pady=10)
