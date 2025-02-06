@@ -73,10 +73,16 @@ def start_gui():
     global root, status_label, start_key_entry, stop_key_entry
 
     root = tk.Tk()
-    root.title("Simple Autoclicker")
+    root.title("Saiba's Simple Autoclicker")
     root.geometry("400x300")
     root.protocol("WM_DELETE_WINDOW", on_close)
+    
+    # img = 
+    #PhotoImage(file='')
+    #root.iconphoto(false,img)
 
+ 
+    
    
     title_label = tk.Label(root, text="Saiba's SimpleAutoClicker", font=("Arial", 16))
     title_label.pack(pady=10)
