@@ -59,9 +59,23 @@ def on_close():
         root.destroy()
         exit(0)
 
+# Time set function
+def time_set():
+    try:
+        hours = int(entry1.get())
+        minutes = int(entry2.get())
+        seconds = int(entry3.get())
+        milliseconds = int(entry4.get())
+        
+        total_time = hours * 3600 + minutes * 60 + seconds + milliseconds / 1000
+        messagebox.showinfo("Time Set", f"Time set to {hours}h {minutes}m {seconds}s {milliseconds}ms")
+        # You can use total_time to set a delay or other time-related functionality
+    except ValueError:
+        messagebox.showerror("Error", "Please enter valid numbers for time!")
+
 # Function to start the GUI
 def start_gui():
-    global root, status_label, start_key_entry, stop_key_entry
+    global root, status_label, start_key_entry, stop_key_entry, entry1, entry2, entry3, entry4
 
     root = tk.Tk()
     root.title("Saiba's Simple Autoclicker")
@@ -87,6 +101,9 @@ def start_gui():
 
     entry4 = tk.Entry(entry_frame, width=10)
     entry4.grid(row=0, column=3, padx=5)
+
+    set_button = tk.Button(entry_frame, text="Set Time", command=time_set)
+    set_button.grid(row=0, column=4, padx=5)
 
     # Hotkey frame
     hotkey_frame = tk.Frame(root)
